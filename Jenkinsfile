@@ -7,7 +7,7 @@ pipeline {
    stages {
        stage('SCM CheckOut'){
           steps {
-            git 'https://github.com/therahulpatil'
+            git 'https://github.com/therahulpatil/RIO'
           }
           }
       stage('Compile-Package'){
