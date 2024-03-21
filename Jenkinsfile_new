@@ -1,24 +1,35 @@
-pipeline{
-  agent any
-  tools {
-      maven 'Maven3.6.3'
-      }
-  stages {
-     stage('SCM Checkout') {
-        steps {
-             git "http://github.com/debashis-1306/TestApp'
-              }
-          }
-     stage('Compile-package'){
-        steps {
-            sh "mvn -version"
-            sh "mvn clean install"
-            sh "mvn package"
-            }
-         }
-  post {
-     always {
-       cleanWS()
-      }
+pipeline {
+    agent any 
+    
+    tools {
+        maven 'Maven3.6.3'
     }
-} 
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/therahulpatil/RIO'
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                sh "mvn -version"
+                sh "mvn clean install"
+            }
+        }
+        
+        stage('Package') {
+            steps {
+                sh "mvn package"
+            }
+        }
+    }
+    
+    post {
+        always {
+            cleanWs()
+        }
+    }
+}
+
