@@ -7,7 +7,7 @@ pipeline {
    stages {
        stage('SCM CheckOut'){
           steps {
-            git 'https://github.com/debashis-1306/TestApp'
+            git 'https://github.com/therahulpatil'
           }
           }
       stage('Compile-Package'){
