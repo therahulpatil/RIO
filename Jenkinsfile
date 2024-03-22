@@ -12,8 +12,7 @@ pipeline {
           }
       stage('Compile-Package'){
          steps {
-             sh "mvn -version"
-             sh "mvn clean install" 
+             sh "mvn -version" 
              sh "mvn package"
               }
          }
