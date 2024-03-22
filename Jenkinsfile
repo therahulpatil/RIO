@@ -3,7 +3,6 @@ pipeline {
    tools {
         maven 'Maven3.6.3' 
     }
-   
    stages {
        stage('SCM CheckOut'){
           steps {

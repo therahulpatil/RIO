@@ -6,7 +6,7 @@ pipeline{
   stages {
      stage('SCM Checkout') {
         steps {
-             git "http://github.com/debashis-1306/TestApp'
+             git 'http://github.com/debashis-1306/TestApp'
               }
           }
      stage('Compile-package'){
@@ -21,4 +21,5 @@ pipeline{
        cleanWS()
       }
     }
-} 
+  } 
+}
