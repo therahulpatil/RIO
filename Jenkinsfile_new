@@ -16,16 +16,9 @@ pipeline {
             steps {
                 sh "mvn -version"
                 sh "mvn clean install"
-            }
-        }
-        
-        stage('Package') {
-            steps {
                 sh "mvn package"
             }
         }
-    }
-    
     post {
         always {
             cleanWs()
